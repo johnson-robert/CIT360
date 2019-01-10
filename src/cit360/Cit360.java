@@ -10,6 +10,7 @@ package cit360;
  * @author User
  */
 public class Cit360 {
+    int x = 1;
 
     /**
      * @param args the command line arguments
