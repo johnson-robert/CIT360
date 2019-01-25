@@ -17,7 +17,8 @@ public class androidHttpUrlConnection {
     public static void main(String[] args) {
         //Populate output from url
         String output = getUrlContents("http://google.com");
-        //String output = getUrlContents("http://google.com");
+        //String output = getUrlContents("https://github.com/johnson-robert"
+        //+ "/cit360/blob/master/src/cit360/androidHttpUrlConnection.java");
         //Print output
         System.out.println(output);
     }
