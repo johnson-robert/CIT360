@@ -2,9 +2,6 @@
  * To change thismotorcyclesicense header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- *https://docs.oracle.com/javase/tutorial/collections/index.html
- *http://www.tutorialspoint.com/java/java_collections.htm
- *show one expamle of each type
  */
 package collections;
 
