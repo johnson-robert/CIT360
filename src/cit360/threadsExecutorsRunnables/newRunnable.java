@@ -15,11 +15,11 @@ public class newRunnable implements Runnable {
     public void run() {
         try {
             for (int i = 0; i < 10; i++) {
-                System.out.println("Thread-3 " + i);
-                Thread.sleep(1000);
+                System.out.println("Thread-2 " + i);
+                Thread.sleep(500);
             }
         } catch (InterruptedException e) {
-            System.out.println("Thread-3 Interrrupted");
+            System.out.println("Thread-2 Interrrupted");
         }
     }
 }
