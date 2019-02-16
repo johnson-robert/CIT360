@@ -49,6 +49,7 @@ public class Collections {
         hash_Set.add("Triumph");
 
         //Size of hashSet
+        //System.out.print(motorcycles.get(0));
         System.out.print("There are currently "
                 + (motorcycles.size() + 1) + " Motorcycles");
 
@@ -73,6 +74,7 @@ public class Collections {
 
         //Alphabet Size
         System.out.println("Alphabet Size: " + alphabet.size());
+        System.out.println(alphabet.get("c"));
 
         //Print Alphabet
         System.out.println("alphabet is " + alphabet);
