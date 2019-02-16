@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="acme"/>
+  <table-filter match-name="images"/>
+  <table-filter match-name="categories"/>
+  <table-filter match-name="clients"/>
+  <table-filter match-name="inventory"/>
+  <table-filter match-name="reviews"/>
+</hibernate-reverse-engineering>
