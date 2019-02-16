@@ -30,7 +30,7 @@ public class myOtherFunc {
         alphabet.put("y", new Integer(25));
         alphabet.put("z", new Integer(26));
 
-        System.out.println(alphabet.get("letter"));
+        System.out.println(alphabet.get(letter));
 
         return alphabet.get(letter);
     }
