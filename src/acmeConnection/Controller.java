@@ -32,33 +32,36 @@ public class Controller {
             throw new ExceptionInInitializerError(ex);
         }
     }
-    //for using view
-//    public static SessionFactory getSessionFactory() {
-//        return sessionFactory;
-//    }
+    
+//  "C:\\Users\\User\\Documents\\NetBeansProjects\\cit360\\src\\acmeConnection\\hibernate.cfg.xml"
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
 
  // Method to  READ all the employees
-   public void listCategories( ){
+   public static void listCategories(){
       Session session = sessionFactory.openSession();
       Transaction tx = null;
       
       try {
          System.out.println("Made it this far too.");
-         tx = session.beginTransaction();
+         //tx = session.beginTransaction();
          List category = session.createQuery("FROM Categories").list(); 
          for (Iterator iterator = category.iterator(); iterator.hasNext();){
             Categories categories = (Categories) iterator.next(); 
             System.out.print("First Name: " + categories.getCategoryId()); 
-            //System.out.print("  Last Name: " + employee.getLastName()); 
-            //System.out.println("  Salary: " + employee.getSalary()); 
          }
          tx.commit();
       } catch (HibernateException e) {
          System.out.println("Made it too here."); 
          if (tx!=null) tx.rollback();
+         System.out.println("Made it here three.");
          e.printStackTrace(); 
       } finally {
          session.close(); 
       }
+      
    }
+
 }
+

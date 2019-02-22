@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 1, 2019 12:08:59 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="acme" name="acmeConnection.Reviews" optimistic-lock="version" table="reviews">
+    <id name="reviewId" type="java.lang.Integer">
+      <column name="reviewId"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="acmeConnection.Clients" fetch="select" name="clients">
+      <column name="clientId" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="acmeConnection.Inventory" fetch="select" name="inventory">
+      <column name="invId" not-null="true"/>
+    </many-to-one>
+    <property name="reviewText" type="string">
+      <column length="65535" name="reviewText" not-null="true"/>
+    </property>
+    <property name="reviewDate" type="timestamp">
+      <column length="19" name="reviewDate" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 1, 2019 12:08:59 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="acme" name="acmeConnection.Clients" optimistic-lock="version" table="clients">
+    <id name="clientId" type="java.lang.Integer">
+      <column name="clientId"/>
+      <generator class="identity"/>
+    </id>
+    <property name="clientFirstname" type="string">
+      <column length="15" name="clientFirstname" not-null="true"/>
+    </property>
+    <property name="clientLastname" type="string">
+      <column length="25" name="clientLastname" not-null="true"/>
+    </property>
+    <property name="clientEmail" type="string">
+      <column length="40" name="clientEmail" not-null="true" unique="true"/>
+    </property>
+    <property name="clientPassword" type="string">
+      <column name="clientPassword" not-null="true"/>
+    </property>
+    <property name="clientLevel" type="string">
+      <column length="2" name="clientLevel" not-null="true"/>
+    </property>
+    <property name="comments" type="string">
+      <column length="65535" name="comments" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="reviewses" table="reviews">
+      <key>
+        <column name="clientId" not-null="true"/>
+      </key>
+      <one-to-many class="acmeConnection.Reviews"/>
+    </set>
+  </class>
+</hibernate-mapping>

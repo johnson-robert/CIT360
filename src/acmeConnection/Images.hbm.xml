@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 1, 2019 12:08:59 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="acme" name="acmeConnection.Images" optimistic-lock="version" table="images">
+    <id name="imgId" type="java.lang.Integer">
+      <column name="imgId"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="acmeConnection.Inventory" fetch="select" name="inventory">
+      <column name="invId" not-null="true"/>
+    </many-to-one>
+    <property name="imgName" type="string">
+      <column length="100" name="imgName" not-null="true"/>
+    </property>
+    <property name="imgPath" type="string">
+      <column length="150" name="imgPath" not-null="true"/>
+    </property>
+    <property name="imgDate" type="timestamp">
+      <column length="19" name="imgDate" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

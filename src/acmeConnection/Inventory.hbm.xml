@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 1, 2019 12:08:59 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="acme" name="acmeConnection.Inventory" optimistic-lock="version" table="inventory">
+    <id name="invId" type="java.lang.Integer">
+      <column name="invId"/>
+      <generator class="identity"/>
+    </id>
+    <property name="invName" type="string">
+      <column length="50" name="invName" not-null="true"/>
+    </property>
+    <property name="invDescription" type="string">
+      <column length="65535" name="invDescription" not-null="true"/>
+    </property>
+    <property name="invImage" type="string">
+      <column length="50" name="invImage" not-null="true"/>
+    </property>
+    <property name="invThumbnail" type="string">
+      <column length="50" name="invThumbnail" not-null="true"/>
+    </property>
+    <property name="invPrice" type="big_decimal">
+      <column name="invPrice" not-null="true" precision="10"/>
+    </property>
+    <property name="invStock" type="short">
+      <column name="invStock" not-null="true"/>
+    </property>
+    <property name="invSize" type="short">
+      <column name="invSize" not-null="true"/>
+    </property>
+    <property name="invWeight" type="short">
+      <column name="invWeight" not-null="true"/>
+    </property>
+    <property name="invLocation" type="string">
+      <column length="35" name="invLocation" not-null="true"/>
+    </property>
+    <property name="categoryId" type="int">
+      <column name="categoryId" not-null="true"/>
+    </property>
+    <property name="invVendor" type="string">
+      <column length="20" name="invVendor" not-null="true"/>
+    </property>
+    <property name="invStyle" type="string">
+      <column length="20" name="invStyle" not-null="true"/>
+    </property>
+    <property name="invFeatured" type="java.lang.Boolean">
+      <column name="invFeatured">
+        <comment>Null or True</comment>
+      </column>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="reviewses" table="reviews">
+      <key>
+        <column name="invId" not-null="true"/>
+      </key>
+      <one-to-many class="acmeConnection.Reviews"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="imageses" table="images">
+      <key>
+        <column name="invId" not-null="true"/>
+      </key>
+      <one-to-many class="acmeConnection.Images"/>
+    </set>
+  </class>
+</hibernate-mapping>
