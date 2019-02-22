@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration">
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -7,10 +7,10 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/acme?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">iClient</property>
     <property name="hibernate.connection.password">1Silverado!</property>
-    <mapping resource="hibernate/Reviews.hbm.xml"/>
-    <mapping resource="hibernate/Clients.hbm.xml"/>
-    <mapping resource="hibernate/Categories.hbm.xml"/>
-    <mapping resource="hibernate/Images.hbm.xml"/>
-    <mapping resource="hibernate/Inventory.hbm.xml"/>
+    <mapping resource="acmeConnection/Reviews.hbm.xml"/>
+    <mapping resource="acmeConnection/Clients.hbm.xml"/>
+    <mapping resource="acmeConnection/Categories.hbm.xml"/>
+    <mapping resource="acmeConnection/Images.hbm.xml"/>
+    <mapping resource="acmeConnection/Inventory.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
